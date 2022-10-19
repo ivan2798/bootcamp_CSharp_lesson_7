@@ -2,6 +2,8 @@
 using System.Collections.Concurrent;
 using System.Security.Cryptography;
 
+
+
 // Hello World! program
 namespace bootcamp_CSharp_lesson_7
 {
@@ -11,8 +13,8 @@ namespace bootcamp_CSharp_lesson_7
 
         static void Main(string[] args)
         {
-            realizarTarea();
-
+            var miVariable = new { Nombre = "Ivan", Dinero = 200 };
+            Console.WriteLine(miVariable.Nombre + " " + miVariable.Dinero);
         }
 
         static void realizarTarea()
