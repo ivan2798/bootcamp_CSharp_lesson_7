@@ -12,17 +12,12 @@ namespace bootcamp_CSharp_lesson_7
         static void Main(string[] args)
         {
 
-            Circulo miCirculo; // creación de objeto de tipo Círculo. Variable/objeto de tipo círculo.
+           ConversorEuroDolar obj = new ConversorEuroDolar();
 
-            miCirculo = new Circulo(); //Iniciación de variable/objeto de tipo Circulo. Instanciar una clase
-            //Instanciación. Ejemplarización. Creación de ejemplar de clase.
+            obj.cambiValorEuro(1.45);
 
-            Console.WriteLine(miCirculo.calculoArea(5));
-
-            Circulo miCirculo2 = new Circulo();
-
-            Console.WriteLine(miCirculo2.calculoArea(9));
-
+            Console.WriteLine(obj.convierte(50));
+            
 
         }
 
@@ -31,13 +26,31 @@ namespace bootcamp_CSharp_lesson_7
     class Circulo
     {
 
-        double pi = 3.1216;  //propiedad de la clase Círculo. Campo de clase.
+        private const double PI = 3.1216;  //propiedad de la clase Círculo. Campo de clase.
 
-        public double calculoArea(int radio) // método de cla. ¿Qué pueden hacer los objetos de tipo círculo?
+        public double CalculoArea(int radio) // método de cla. ¿Qué pueden hacer los objetos de tipo círculo?
         {
 
-            return pi * radio * radio;
+            return PI * radio * radio;
         }
      
+    }
+
+    class ConversorEuroDolar
+    {
+        private double euro = 1.253;
+
+        public double convierte(double cantidad)
+        {
+            return cantidad * euro;
+        }
+
+        public void cambiValorEuro(double nuevoValor)
+        {
+            if (nuevoValor < 0) euro = 1.253;
+
+            else
+                euro = nuevoValor;
+        }
     }
 }
