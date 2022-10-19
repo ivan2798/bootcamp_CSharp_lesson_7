@@ -23,12 +23,16 @@ namespace bootcamp_CSharp_lesson_7
 
             Console.WriteLine(coche3.getInfoCoche());
 
+            coche3.setExtras(true, "cuero");
+
+            Console.WriteLine(coche3.getExtras());
+
         }
 
 
     }
 
-    class Coche
+    partial class Coche
     {
         public Coche()
         {
@@ -37,6 +41,9 @@ namespace bootcamp_CSharp_lesson_7
             largo = 2300.5;
 
             ancho = 0.800;
+
+            tapiceria = "tela";
+
         }
 
         public Coche(double largo, double ancho)
@@ -44,12 +51,28 @@ namespace bootcamp_CSharp_lesson_7
             this.ruedas = 4;
             this.largo = largo;
             this.ancho = ancho;
-            
-        }   
+            this.tapiceria = "tela";
+        }
+    }
+
+    partial class Coche
+    { 
 
         public string getInfoCoche()
         {
             return $"Informacion del coche: Ruedas: {ruedas}, Largo: {largo}, Ancho:{ancho} ";
+        }
+
+        public void setExtras(bool climatizador, string tapiceria)
+        {
+            this.climatizador = climatizador;
+
+            this.tapiceria = tapiceria;
+        } 
+
+        public string getExtras()
+        {
+            return $"Extras del coche: Tapicería {tapiceria}, Climatizador {climatizador}";
         }
 
         private int ruedas;
@@ -60,7 +83,7 @@ namespace bootcamp_CSharp_lesson_7
 
         private bool climatizador;
 
-        private String tapicaria;
+        private String tapiceria;
     }
     class Circulo
     {
