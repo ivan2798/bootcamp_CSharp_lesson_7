@@ -24,6 +24,8 @@ namespace bootcamp_CSharp_lesson_7
             double distancia = origen.DistanciaHasta(destino);
 
             Console.WriteLine($"La distancia entre los puntos es de: {distancia}");
+
+            Console.WriteLine($"Número de objetos creados: {Punto.ContadorDeObjetos()}");
         }
 
 

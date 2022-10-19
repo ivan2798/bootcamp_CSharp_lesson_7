@@ -13,6 +13,8 @@ namespace bootcamp_CSharp_lesson_7
             this.x = x;
 
             this.y = y;
+
+            contadorDeObjetos++;
         }
 
         public Punto()
@@ -20,7 +22,9 @@ namespace bootcamp_CSharp_lesson_7
             this.x = 0;
 
             this.y = 0;
-            
+
+            contadorDeObjetos++;
+
         }
 
         public double DistanciaHasta(Punto otroPunto)
@@ -35,8 +39,18 @@ namespace bootcamp_CSharp_lesson_7
 
         }
 
+        /*public static int ContadorDeObjetos()
+        {
+            return contadorDeObjetos;
+        }*/
+
+        public static int ContadorDeObjetos() => contadorDeObjetos;
+        
+
 
         private int x, y;
+
+        private static int contadorDeObjetos = 0;
 
     }
 }
