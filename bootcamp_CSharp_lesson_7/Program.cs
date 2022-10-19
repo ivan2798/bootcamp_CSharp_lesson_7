@@ -11,17 +11,56 @@ namespace bootcamp_CSharp_lesson_7
 
         static void Main(string[] args)
         {
+            Coche coche1 = new Coche(); // crear objeto/instancia de tipo Coche.
+            //dar un estado inical a nuestro coche
 
-           ConversorEuroDolar obj = new ConversorEuroDolar();
+            Coche coche2 = new Coche();
 
-            obj.cambiValorEuro(1.45);
+            Console.WriteLine(coche1.getInfoCoche());
+            Console.WriteLine(coche2.getInfoCoche());
 
-            Console.WriteLine(obj.convierte(50));
-            
+            Coche coche3 = new Coche(4500.25, 1200.35);
+
+            Console.WriteLine(coche3.getInfoCoche());
 
         }
 
 
+    }
+
+    class Coche
+    {
+        public Coche()
+        {
+            ruedas = 4;
+
+            largo = 2300.5;
+
+            ancho = 0.800;
+        }
+
+        public Coche(double largo, double ancho)
+        {
+            this.ruedas = 4;
+            this.largo = largo;
+            this.ancho = ancho;
+            
+        }   
+
+        public string getInfoCoche()
+        {
+            return $"Informacion del coche: Ruedas: {ruedas}, Largo: {largo}, Ancho:{ancho} ";
+        }
+
+        private int ruedas;
+
+        private double largo;
+
+        private double ancho;
+
+        private bool climatizador;
+
+        private String tapicaria;
     }
     class Circulo
     {
